@@ -42,6 +42,7 @@ public class RPSPanel extends JPanel {
 		lp.setBounds(0,0,250,400);
 //		lp.setText("Are You ");
 		lp.setIcon(new ImageIcon(OptionsPanel.resize(white, lp.getWidth(), lp.getHeight())));
+		
 		this.add(lp);
 		
 		rp = new LeftPanel();

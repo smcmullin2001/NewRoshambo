@@ -2,7 +2,9 @@ package com.stephen.java;
 
 import java.awt.GridLayout;
 import java.awt.Image;
+
 import javax.swing.ImageIcon;
+import javax.swing.SwingConstants;
 
 public class RockPaperScissors {
 
@@ -39,7 +41,9 @@ public class RockPaperScissors {
 	}
 	public void endGame(){
 		rPanel.setLayout(new GridLayout(1,3));
+		rPanel.remove(rPanel.rp);
 		rPanel.add(gameOver);
+		rPanel.add(rPanel.rp);
 		op.rock.setEnabled(false);
 		op.paper.setEnabled(false);
 		op.scissors.setEnabled(false);
