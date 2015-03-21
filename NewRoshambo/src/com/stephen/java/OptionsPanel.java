@@ -1,3 +1,7 @@
+//TODO: Set Win/Lose/Draw commentaries
+//		New method to set bestOf values to false
+//		Create method to do random image selection
+
 package com.stephen.java;
 
 import java.awt.*;
@@ -274,84 +278,53 @@ public class OptionsPanel extends JPanel {
 
 	public void buttonColors(int i){
 		switch(i){
-		case 3: {
-			bestOfThree.setBackground(new Color(135,206,235, 240));
-			bestOfFive.setBackground(null);
-			bestOfSeven.setBackground(null);
-			infinity.setBackground(null);
-			break;
-		}
-		case 5:{
-			bestOfFive.setBackground(new Color(135,206,235, 240));
-			bestOfThree.setBackground(null);
-			bestOfSeven.setBackground(null);
-			infinity.setBackground(null);
-			break;
-		}
-		case 7:{
-			bestOfSeven.setBackground(new Color(135,206,235, 240));
-			bestOfThree.setBackground(null);
-			bestOfFive.setBackground(null);
-			infinity.setBackground(null);
-			break;
-		}
-		case 'i':{
-			bestOfSeven.setBackground(null);
-			bestOfThree.setBackground(null);
-			bestOfFive.setBackground(null);
-			infinity.setBackground(new Color(135,206,235, 240));
-			break;
-		}
 		case 'r':{
+			setNullBackground(1);
 			rock.setBackground(new Color(176,196,222, 240));
-			paper.setBackground(null);
-			scissors.setBackground(null);
-			lizard.setBackground(null);
-			spock.setBackground(null);
 			break;
 		}
 		case 'p':{
+			setNullBackground(1);
 			paper.setBackground(new Color(176,196,222, 240));
-			rock.setBackground(null);
-			scissors.setBackground(null);
-			lizard.setBackground(null);
-			spock.setBackground(null);
 			break;
 		}
 		case 's':{
+			setNullBackground(1);
 			scissors.setBackground(new Color(176,196,222, 240));
-			rock.setBackground(null);
-			paper.setBackground(null);
-			lizard.setBackground(null);
-			spock.setBackground(null);
 			break;
 		}case 'l':{
+			setNullBackground(1);
 			lizard.setBackground(new Color(176,196,222, 240));
-			rock.setBackground(null);
-			paper.setBackground(null);
-			scissors.setBackground(null);
-			spock.setBackground(null);
 			break;
 		}
 		case 'v':{
+			setNullBackground(1);
 			spock.setBackground(new Color(176,196,222, 240));
-			rock.setBackground(null);
-			paper.setBackground(null);
-			scissors.setBackground(null);
-			lizard.setBackground(null);
+			break;
+		}
+		case 3: {
+			setNullBackground(2);
+			bestOfThree.setBackground(new Color(135,206,235, 240));
+			break;
+		}
+		case 5:{
+			setNullBackground(2);
+			bestOfFive.setBackground(new Color(135,206,235, 240));
+			break;
+		}
+		case 7:{
+			setNullBackground(2);
+			bestOfSeven.setBackground(new Color(135,206,235, 240));
+			break;
+		}
+		case 'i':{
+			setNullBackground(2);
+			infinity.setBackground(new Color(135,206,235, 240));
 			break;
 		}
 		default:{
-			rock.setBackground(null);
-			paper.setBackground(null);
-			scissors.setBackground(null);
-			lizard.setBackground(null);
-			spock.setBackground(null);
-			bestOfThree.setBackground(null);
-			bestOfFive.setBackground(null);
-			bestOfSeven.setBackground(null);
-			infinity.setBackground(null);
-			reset.setBackground(null);
+			setNullBackground(1);
+			setNullBackground(2);
 			break;
 		}
 		}
@@ -362,111 +335,108 @@ public void calculateScore(int youScore, int index){
 		switch(youScore){
 		case 0:{//rock
 			if(index == 0){
+				setDraw(0);
 			}
-			if(index == 1){
-				setHalScore();
+			if(index == 1 || index == 3){
+				setHalScore(0);
 
 			}
-			if(index == 2){
-				setYouScore();
-			}
-			if(index == 3){
-				setHalScore();
-
-			}
-			if(index == 4){
-				setYouScore();
+			if(index == 2 || index == 4){
+				setYouScore(0);
 			}
 			break;
 		}
 		case 1:{//paper
-			if(index == 0){
-				setYouScore();
+			if(index == 0 || index == 3){
+				setYouScore(1);
 			}
 			if(index == 1){
+				setDraw(1);
 			}
-			if(index == 2){
-				setHalScore();
+			if(index == 2 || index == 4){
+				setHalScore(1);
 
 			}
-			if(index == 3){
-				setYouScore();
-			}
-			if(index == 4){
-				setHalScore();
-
-			}
+			
 			break;
 		}
 		case 2:{//scissors
-			if(index == 0){
-				setHalScore();
+			if(index == 0 || index == 3){
+				setHalScore(2);
 			}
-			if(index == 1){
-				setYouScore();
+			if(index == 1 || index == 4){
+				setYouScore(2);
 			}
 			if(index == 2){
-				
+				setDraw(2);
 			}
-			if(index == 3){
-				setHalScore();
-
-			}
-			if(index == 4){
-				setYouScore();
-			}
+			
 			break;
 		}
 		case 3:{//spock
-			if(index == 0){
-				setYouScore();
+			if(index == 0 || index == 2){
+				setYouScore(3);
 			}
-			if(index == 1){
-				setHalScore();
+			if(index == 1 || index == 4){
+				setHalScore(3);
 
 			}
-			if(index == 2){
-				setYouScore();
-			}
+			
 			if(index == 3){
-				
+				setDraw(3);
 			}
-			if(index == 4){
-				setHalScore();
-
-			}
+			
 			break;
 		}
 		case 4:{//lizard
-			if(index == 0){
-				setHalScore();
+			if(index == 0 || index == 2){
+				setHalScore(4);
 			}
-			if(index == 1){
-				setYouScore();
+			if(index == 1 || index == 3){
+				setYouScore(4);
 			}
-			if(index == 2){
-				setHalScore();
-
-			}
-			if(index == 3){
-				setYouScore();
-			}
+			
 			if(index == 4){
-				
+				setDraw(4);
 			}
 			break;
 		}
 		}
 	}
-public void setYouScore(){
+public void setYouScore(int move){
 	RPSFrame.top.youScore.setText("" + (Integer.parseInt(RPSFrame.top.youScore.getText()) + 1));
 
 }
-public void setHalScore(){
+public void setHalScore(int move){
 	RPSFrame.top.halScore.setText("" + (Integer.parseInt(RPSFrame.top.halScore.getText()) + 1));
-
+	
+}
+public void setDraw(int move){
+	RPSFrame.top.commentary1.setText("************");
+	RPSFrame.top.commentary2.setText("It's a draw,");
+	RPSFrame.top.commentary3.setText("  go again!");
+	RPSFrame.top.commentary4.setText("************");
 
 }
+public void setNullBackground(int type){
+	//type == 1 for top layer buttons
+	//type == 2 for bottom layer buttons
+	if(type == 1){
+		rock.setBackground(null);
+		paper.setBackground(null);
+		scissors.setBackground(null);
+		lizard.setBackground(null);
+		spock.setBackground(null);
+	}
+	if(type == 2){
+		bestOfThree.setBackground(null);
+		bestOfFive.setBackground(null);
+		bestOfSeven.setBackground(null);
+		infinity.setBackground(null);
+		reset.setBackground(null);
+	}
+}
+
 public static BufferedImage resize(BufferedImage image, int width, int height) {
     BufferedImage bi = new BufferedImage(width, height, BufferedImage.TRANSLUCENT);
     Graphics2D g2d = (Graphics2D) bi.createGraphics();

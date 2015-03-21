@@ -19,6 +19,7 @@ public class RPSFrame extends JFrame {
 	OptionsPanel op;
 	
 	static Top top;
+	static Top lowerTop;
 	
 	public RPSFrame(RPSPanel rPanel, OptionsPanel op) {
 		this.op = op;
@@ -43,6 +44,7 @@ public class RPSFrame extends JFrame {
 		
 
 		container.add(top, BorderLayout.NORTH);
+
 		
 //		JButton button = new JButton("ROCK");
 ////		button.setBounds(0, 0, 200, 150);
