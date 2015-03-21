@@ -1,0 +1,1 @@
+# NewRoshambo version of the Spock/Paper/Scissors game.
