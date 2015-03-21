@@ -1,9 +1,7 @@
 package com.stephen.java;
 
 import java.awt.Color;
-import java.awt.Graphics2D;
 import java.awt.GridLayout;
-import java.awt.RenderingHints;
 import java.awt.image.BufferedImage;
 
 import javax.imageio.ImageIO;
@@ -13,6 +11,11 @@ import javax.swing.SwingConstants;
 
 public class RPSPanel extends JPanel {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8719432678376336276L;
+	@SuppressWarnings("unused")
 	private RockPaperScissors rps;
 	LeftPanel lp;
 	LeftPanel rp;

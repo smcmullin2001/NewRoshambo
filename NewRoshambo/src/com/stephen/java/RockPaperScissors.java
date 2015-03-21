@@ -2,19 +2,14 @@ package com.stephen.java;
 
 import java.awt.GridLayout;
 import java.awt.Image;
-import java.io.IOException;
-import java.util.*;
-
-import javax.imageio.ImageIO;
-import javax.swing.Icon;
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
 
 public class RockPaperScissors {
 
 	static RPSFrame rFrame;
 	static RPSPanel rPanel;
 	static OptionsPanel op;
+	@SuppressWarnings("unused")
 	private RockPaperScissors rps;
 	Image[] images = new Image[3];
 	static Top top;

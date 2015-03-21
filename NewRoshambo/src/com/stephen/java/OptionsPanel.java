@@ -17,6 +17,7 @@ import java.util.Random;
 public class OptionsPanel extends JPanel {
 
 	private static final long serialVersionUID = 1L;
+	@SuppressWarnings("unused")
 	private RockPaperScissors rps;
 	JButton rock;
 	JButton paper;

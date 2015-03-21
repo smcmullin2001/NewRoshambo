@@ -6,6 +6,10 @@ import javax.swing.*;
 
 public class Top extends JPanel {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7409649254708925958L;
 	JLabel you;
 	JLabel youScore;
 	JLabel hal;

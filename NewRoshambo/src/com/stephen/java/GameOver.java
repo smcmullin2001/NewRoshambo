@@ -1,6 +1,5 @@
 package com.stephen.java;
 
-import java.awt.Color;
 import java.awt.GridLayout;
 
 import javax.swing.JButton;
@@ -14,6 +13,10 @@ import java.awt.Font;
 
 public class GameOver extends JPanel {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7313314449299530543L;
 	JLabel gameOverLabel;
 	JLabel winLose;
 	JButton playAgain;
